@@ -1,10 +1,17 @@
 <template>
-  <div>12312</div>
+  <div>
+    <Banner />
+  </div>
 </template>
 
 <script>
+import banner from './banner'
+
 export default {
-    name: 'Index'  
+    name: 'Index',
+    components:{
+      Banner: banner
+  }
 }
 </script>
 

@@ -1,16 +1,9 @@
 <template>
-  <div id="app">
-    <el-container>
-        <el-header>
-            <TopHeader />
-        </el-header>
-        <el-main>  
-          <router-view />
-        </el-main>
-        <el-footer >
-            footer
-        </el-footer>
-    </el-container>
+  <div>
+    <TopHeader />
+    <div id="app">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -30,8 +23,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  height:100%;
+  padding-top:56px;
 }
 body,html{
   margin: 0;
+  height:100%;
 }
 </style>
