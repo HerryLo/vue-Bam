@@ -9,6 +9,8 @@
 
 <script>
 import TopHeader from './components/header'
+import './style/index.css'
+
 export default {
   name: 'app',
   components:{
@@ -25,9 +27,5 @@ export default {
   color: #2c3e50;
   height:100%;
   padding-top:56px;
-}
-body,html{
-  margin: 0;
-  height:100%;
 }
 </style>
