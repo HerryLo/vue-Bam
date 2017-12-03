@@ -5,7 +5,7 @@
       <div class='row'>
         <div class='col-xs-24 col-sm-16 main'>
           <articleNav />
-          <indexArtlist />
+          <indexArtlist :art-list="aList" />
         </div>
       </div>
     </div>
@@ -16,9 +16,25 @@
 import banner from "./banner";
 import articleNav from "./article/articleNav.vue";
 import indexArtList from "./article/indexArtList.vue";
+import { artListAPI } from "../config/API";
 
 export default {
   name: "Index",
+  data() {
+    return {
+      aList: ""
+    };
+  },
+  created() {
+    artListAPI("")
+      .then(res => {
+        this.aList = res.data;
+        console.log(this.aList);
+      })
+      .catch(res => {
+        console.log(res.data);
+      });
+  },
   components: {
     Banner: banner,
     articleNav: articleNav,
