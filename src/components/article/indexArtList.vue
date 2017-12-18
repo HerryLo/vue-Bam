@@ -6,23 +6,23 @@
       </a>
       <div class="content">
         <div class="author">
-          <a class="avatar" target="_blank" href="/u/9142b2802fa2">
+          <a class="avatar" target="_blank">
             <img :src="item.imgSrc" alt="64">
           </a>
           <div class="info">
-            <a class="nickname" target="_blank" href="/u/9142b2802fa2">{{item.username}}</a>
+            <a class="nickname" target="_blank">{{item.username}}</a>
             <span class="time" data-shared-at="2017-12-02T22:10:22+08:00">1小时前</span>
           </div>
         </div>
-        <a class="title" target="_blank" href="/p/c5d761b9e01e">{{item.title}}</a>
+        <a class="title" target="_blank">{{item.title}}</a>
         <p class="abstract">
           {{item.content}}
         </p>
         <div class="meta">
-          <a target="_blank" href="/p/c5d761b9e01e">
+          <a target="_blank">
             <i class="iconfont ic-list-read el-icon-view"></i> {{item.attention}}
           </a>
-          <a target="_blank" href="/p/c5d761b9e01e#comments">
+          <a target="_blank" >
             <i class="iconfont ic-list-comments el-icon-message"></i> 0
           </a>
           <span>

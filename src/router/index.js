@@ -10,5 +10,11 @@ export default new Router({
         component: resolve => {
             require(['@/components/index'], resolve)
         }
+    }, {
+        path: '/writeArt',
+        name: 'writeArt',
+        component: resolve => {
+            require(['@/components/article/writArt'], resolve)
+        }
     }]
 })

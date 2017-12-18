@@ -16,7 +16,7 @@
                     <form target="_blank" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
                     <input type="text" name="q" id="q" value="" autocomplete="off" placeholder="搜索" class="search-input">
                     <a class="search-btn" href="javascript:void(null)"><i class="el-icon-search ic-search iconfont"></i></a>
-                    </form>          
+                    </form>         
                 </li>
             </ul>
         </div>
