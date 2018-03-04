@@ -5,7 +5,7 @@
             <img :src="logo" alt="图片">
             <span></span>
         </div>
-        <div style="float: left;">
+        <div style="float: left;" class='search'>
             <ul class="navbar-nav">
                 <li class="tab active">
                 <router-link to="/">
