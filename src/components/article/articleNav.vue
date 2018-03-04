@@ -1,15 +1,15 @@
 <template>
     <ul class="trigger-menu" data-pjax-container="#list-container">
         <li class="">
-            <a href="/c/V2CqjW?order_by=commented_at">
+            <a>
                 <i class="iconfont ic-latestcomments el-icon-document"></i> 最新评论</a>
         </li>
         <li class="active">
-            <a href="/c/V2CqjW?order_by=added_at">
+            <a>
                 <i class="iconfont ic-articles el-icon-message"></i> 最新收录</a>
         </li>
         <li class="">
-            <a href="/c/V2CqjW?order_by=top">
+            <a>
                 <i class="iconfont ic-hot el-icon-star-on"></i> 热门</a>
         </li>
     </ul>

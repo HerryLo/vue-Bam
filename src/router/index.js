@@ -16,5 +16,17 @@ export default new Router({
         component: resolve => {
             require(['@/components/article/writArt'], resolve)
         }
+    }, {
+        path: '/sign_in',
+        name: 'sign_in',
+        component: resolve => {
+            require(['@/components/user/sign_in'], resolve)
+        }
+    }, {
+        path: '/sign_up',
+        name: 'sign_up',
+        component: resolve => {
+            require(['@/components/user/sign_up'], resolve)
+        }
     }]
 })

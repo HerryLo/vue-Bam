@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar-default" style="border-color: #f0f0f0;">
+    <nav class="navbar-default" style="border-color: #f0f0f0;" v-show="navstate">
     <div class="marginLR">
         <div class='imgLogo'>
             <img :src="logo" alt="图片">
@@ -33,6 +33,7 @@
 
 <script>
 import logo1 from '../assets/logo1.png'
+import {mapState} from 'vuex';
 
 export default {
     name: 'header',
@@ -41,6 +42,11 @@ export default {
             activeIndex: '1',
             logo: logo1
         }
+    },
+    computed:{
+        ...mapState({
+            navstate : state=>state.navstate
+        })
     },
     methods: {
       handleSelect(key, keyPath) {

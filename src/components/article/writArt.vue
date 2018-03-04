@@ -1,17 +1,19 @@
 <template>
    <!-- bidirectional data binding（双向数据绑定） -->
-  <quill-editor v-model="content"
-                ref="myQuillEditor"
-                :options="editorOption"
-                @blur="onEditorBlur($event)"
-                @focus="onEditorFocus($event)"
-                @ready="onEditorReady($event)">
+  <quill-editor
+    style="width:800px;height:500px"
+    v-model="content"
+    ref="myQuillEditor"
+    :options="editorOption"
+    @blur="onEditorBlur($event)"
+    @focus="onEditorFocus($event)"
+    @ready="onEditorReady($event)">
   </quill-editor>
 </template>
 <script>
 // you can also register quill modules in the component
 import Quill from "quill";
-Quill.register("modules/someModule");
+// Quill.register("modules/someModule");
 
 export default {
   data() {

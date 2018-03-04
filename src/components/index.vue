@@ -5,7 +5,7 @@
       <div class='row'>
         <div class='col-xs-24 col-sm-16 main'>
           <articleNav />
-          <indexArtlist :art-list="aList" />
+          <indexArtlist :art-list="artList" />
         </div>
       </div>
     </div>
@@ -22,14 +22,14 @@ export default {
   name: "Index",
   data() {
     return {
-      aList: ""
+      artList: {}
     };
   },
   created() {
     artListAPI("")
       .then(res => {
-        this.aList = res.data;
-        console.log(this.aList);
+        this.artList = res.data;
+        console.log(this.artList.data);
       })
       .catch(res => {
         console.log(res.data);

@@ -1,6 +1,6 @@
 <template>
   <ul class="note-list">
-    <li class="have-img" v-for="item in artList.data" :key="item._id">
+    <li class="have-img" v-if='artList.data' v-for="item in artList.data" :key="item._id">
       <a class="wrap-img" href="/" target="_blank">
         <img class="img-blur-done" :src="item.avatarImg" alt="120">
       </a>

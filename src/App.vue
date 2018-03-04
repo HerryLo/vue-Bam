@@ -28,4 +28,7 @@ export default {
   height:100%;
   padding-top:56px;
 }
+*{
+  box-sizing: border-box;
+}
 </style>
