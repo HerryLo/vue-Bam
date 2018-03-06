@@ -2,29 +2,11 @@
 
 > 使用vue + elementUI开发博客系统，目前在完善中。。。。仿简书界面，喜欢的可以共同开发
 
-## Build Setup
+## 说明
 
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+# git clone 
+# npm install //安装依赖
+# npm run dev 
+# npm run build
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
