@@ -1,6 +1,6 @@
 # bam
 
-> A Vue.js project
+> 使用vue + elementUI开发博客系统，目前在完善中。。。。
 
 ## Build Setup
 
