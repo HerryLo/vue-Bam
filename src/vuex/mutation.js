@@ -1,7 +1,7 @@
-import *as types from './mutation_type'
+import * as types from './mutation_type'
 
 export default {
-    [types.NAVSTATE] (state){
-        state.navState
-    }
+  [types.NAVSTATE] (state) {
+    state.navState
+  }
 }

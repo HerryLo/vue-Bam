@@ -1,14 +1,17 @@
 <template>
    <!-- bidirectional data binding（双向数据绑定） -->
-  <quill-editor
-    style="width:800px;height:500px"
-    v-model="content"
-    ref="myQuillEditor"
-    :options="editorOption"
-    @blur="onEditorBlur($event)"
-    @focus="onEditorFocus($event)"
-    @ready="onEditorReady($event)">
-  </quill-editor>
+   <div style="height:100%">
+     <quill-editor
+        style="width:800px;height:450px;background:#fff;padding-bottom: 60px;"
+        v-model="content"
+        ref="myQuillEditor"
+        :options="editorOption"
+        @blur="onEditorBlur($event)"
+        @focus="onEditorFocus($event)"
+        @ready="onEditorReady($event)">
+      </quill-editor>
+      <el-button type="primary" style="margin-top: 80px;">提交</el-button>
+   </div>
 </template>
 <script>
 // you can also register quill modules in the component
@@ -18,7 +21,7 @@ import Quill from "quill";
 export default {
   data() {
     return {
-      content: "<h2>I am Example</h2>",
+      content: "<h2>文章编辑</h2>",
       editorOption: {
         // some quill options
       }

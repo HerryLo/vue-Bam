@@ -91,7 +91,7 @@
         border-radius: 4px 4px 0 0;
     }
     .sign .sign_form .input-prepend input {
-        width: 100%;
+        width: 50%;
         height: 50px;
         margin-bottom: 0;
         padding: 4px 12px 4px 35px;
@@ -106,7 +106,7 @@
         margin-bottom: 20px;
     }
     .sign .sign_form .input-prepend input {
-        width: 100%;
+        width: 50%;
         height: 50px;
         margin-bottom: 0;
         padding: 4px 12px 4px 35px;

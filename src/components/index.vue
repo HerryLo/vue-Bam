@@ -1,79 +1,91 @@
 <template>
-  <div>
-    <Banner />
-    <div class="container">
-      <div class='row'>
-        <div class='col-xs-24 col-sm-16 main'>
-          <articleNav />
-          <indexArtlist :art-list="artList" />
-        </div>
-      </div>
-    </div>
-  </div>
+<el-container style="height: 100%;">
+  <el-aside width="200px" style="background-color: rgb(50, 65, 87);">
+    <el-menu :default-openeds="[]">
+      <el-submenu :index="item.index" v-for="item in nav" :key="item.index">
+        <template slot="title"><i class="el-icon-message"></i>{{item.name}}</template>
+        <el-submenu index="route.index" v-for="route in item.routes" :key="route.index">
+          <template slot="title">{{route.name}}</template>
+          <el-menu-item :index="child.index" v-for="child in route.child" :key="child.index">
+            <router-link :to="child.url">{{child.name}}</router-link>
+          </el-menu-item>
+        </el-submenu>
+      </el-submenu>
+    </el-menu>
+  </el-aside>
+  
+  <el-container style="height: aoto;">
+    <el-header>
+      <el-dropdown>
+        <i class="el-icon-setting" style="margin-right: 15px"></i>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>查看</el-dropdown-item>
+          <el-dropdown-item>新增</el-dropdown-item>
+          <el-dropdown-item>删除</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+      <span>admin</span>
+    </el-header>
+    
+    <el-main style="background:#eee;">
+      <router-view />
+    </el-main>
+  </el-container>
+</el-container>
+
 </template>
 
 <script>
-import banner from "./banner";
-import articleNav from "./article/articleNav.vue";
-import indexArtList from "./article/indexArtList.vue";
 import { artListAPI } from "../config/API";
 
 export default {
   name: "Index",
   data() {
     return {
-      artList: {}
+      nav: [
+        {
+          index: "1",
+          name: "管理员",
+          routes: [
+            {
+              index: "1-1",
+              name: "管理",
+              child: [{ index: "1-1", name: "文章编辑", url: '/writeArt' }]
+            }
+          ]
+        }
+      ]
     };
   },
   created() {
-    artListAPI("")
-      .then(res => {
-        this.artList = res.data;
-        console.log(this.artList.data);
-      })
-      .catch(res => {
-        console.log(res.data);
-      });
+    // artListAPI("")
+    //   .then(res => {
+    //     this.artList = res.data;
+    //     console.log(this.artList.data);
+    //   })
+    //   .catch(res => {
+    //     console.log(res.data);
+    //   });
   },
-  components: {
-    Banner: banner,
-    articleNav: articleNav,
-    indexArtlist: indexArtList
-  }
+  components: {}
 };
 </script>
 
 <style>
-.el-row {
-  margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
+.el-header {
+  background-color: #242f42;
+  color: #333;
+  line-height: 60px;
+  text-align: right;
+  font-size: 12px;
+  color: #fff;
 }
-.el-col {
-  border-radius: 4px;
+
+.el-aside {
+  color: #333;
 }
-.bg-purple-dark {
-  background: #99a9bf;
-}
-.bg-purple {
-  background: #d3dce6;
-}
-.bg-purple-light {
-  background: #e5e9f2;
-}
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
-}
-.row-bg {
-  padding: 10px 0;
-  background-color: #f9fafc;
-}
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+a:hover{
+  color: #333;
 }
 </style>
+

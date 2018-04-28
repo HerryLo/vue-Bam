@@ -1,7 +1,7 @@
-import *as types from './mutation_type';
+import * as types from './mutation_type'
 
 export default {
-    change(commit) {
-        commit(types.NAVSTATE);
-    }
+  change (commit) {
+    commit(types.NAVSTATE)
+  }
 }
