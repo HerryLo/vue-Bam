@@ -1,6 +1,6 @@
 # bam
 
-> 使用vue + elementUI+MongoDB开发博客系统，前后端分离，目前在完善中。。。。仿简书界面，喜欢的可以共同开发
+> 使用vue + elementUI+MongoDB开发后台管理系统
 
 ## 说明
 
