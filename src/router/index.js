@@ -16,6 +16,12 @@ export default new Router({
       component: resolve => {
         require(['@/components/article/writArt'], resolve)
       }
+    }, {
+      path: '/userAdmin',
+      name: 'userAdmin',
+      component: resolve => {
+        require(['@/components/user/userAdmin'], resolve)
+      }
     }]
   }, {
     path: '/sign_in',
