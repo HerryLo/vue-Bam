@@ -30,6 +30,7 @@
 </template>
 <script>
 import {register} from '../../config/API'
+import {} from 'vue-router'
 
     export default {
         name: 'sign_up',
@@ -46,8 +47,15 @@ import {register} from '../../config/API'
                 const { user, password, photo } = this;
                 const params = {user, password, photo};
                 const result = await register({params});
-                if(result){
-                    
+                if(result.code == 0){
+                    this.$message({
+                        message: '恭喜你，注册成功',
+                        type: 'success'
+                    },()=> {
+                        this.$router.push({
+                            path: '/'
+                        })
+                    });
                 }
             }
         }
