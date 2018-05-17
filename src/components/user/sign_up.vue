@@ -29,8 +29,28 @@
   </div>
 </template>
 <script>
+import {register} from '../../config/API'
+
     export default {
-        name: 'sign_up'
+        name: 'sign_up',
+        data: {
+            user: '',
+            password: '',
+            photo: ''
+        },
+        mounted: {
+
+        },
+        methods: {
+            async register() {
+                const { user, password, photo } = this;
+                const params = {user, password, photo};
+                const result = await register({params});
+                if(result){
+                    
+                }
+            }
+        }
     }
 </script>
 

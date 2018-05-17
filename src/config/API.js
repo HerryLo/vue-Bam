@@ -1,9 +1,11 @@
 import axios from 'axios'
-
-const url = `http://localhost:3222`
-
-export const artListAPI = (params) => {
-  return axios.get(`${url}/api/artlist`, {
+import config from './config'
+/**
+ * 账号注册
+ */
+export const register = async (params) => {
+  const result = await axios.post(`${config.url}/api/register`, {
     params: params
   })
+  return result
 }
