@@ -4,8 +4,8 @@
         <h4 class="title">
             <div class="normal-title">
                 <router-link to="/sign_in" class="active">登录</router-link>
-                <b>·</b>
-                <router-link id="js-sign-up-btn" to="/sign_up">注册</router-link>
+                <!-- <b>·</b>
+                <router-link id="js-sign-up-btn" to="/sign_up">注册</router-link> -->
             </div>
         </h4>
         <div class='js-sign-in-container'>
