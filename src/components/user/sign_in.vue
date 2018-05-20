@@ -11,25 +11,57 @@
         <div class='js-sign-in-container'>
             <div class='sign_form'>
                 <div class="input-prepend restyle js-normal">
-                    <input placeholder="手机号或邮箱" type="text" name="session[email_or_mobile_number]" id="session_email_or_mobile_number">
+                    <input placeholder="手机号或邮箱" type="text" v-model="user" id="session_email_or_mobile_number">
                     <i class="iconfont ic-user"></i>
                 </div>
                 <div class="input-prepend">
-                    <input placeholder="密码" type="password" name="session[password]" id="session_password">
+                    <input placeholder="密码" type="password" v-model="password" id="session_password">
                     <i class="iconfont ic-password"></i>
                 </div>
                 <div class="remember-btn">
                     <input type="checkbox" value="true" checked="checked" name="session[remember_me]" id="session_remember_me"><span>记住我</span>
                 </div>
-                <input type="submit" name="commit" value="登录" class="sign-in-button" data-disable-with="登录">
+                <input type="submit" name="commit" value="登录" class="sign-in-button" @click="login">
             </div>
         </div>
     </div>
   </div>
 </template>
 <script>
+import { login } from "../../config/API";
+import config from "../../config/config";
+import md5 from "md5";
+
     export default {
-        name: 'sign_in'
+        name: 'sign_in',
+        data() {
+            return {
+                user: '',
+                password: ''
+            }
+        },
+        methods: {
+            async login() {
+                let { user, password, photo } = this;
+                let params = { user, password: md5(password + config.scrent)}
+                const result = await login(params);
+                if (result.data.code == 0 && result.status == 200) {
+                    this.$message(
+                    {
+                        message: "登录成功",
+                        type: "success"
+                    }
+                    );
+                    localStorage.setItem('LHToken', result.data.token)
+                    this.$router.push({ path: "/userAdmin" });
+                }else{
+                    this.$message({
+                        message: result.data.desc,
+                        type: "warning"
+                    });
+                }
+            }
+        }
     }
 </script>
 

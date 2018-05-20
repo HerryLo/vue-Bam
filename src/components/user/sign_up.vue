@@ -30,7 +30,7 @@
 </template>
 <script>
 import { register } from "../../config/API";
-import config from '../../config/config'
+import config from "../../config/config";
 import md5 from "md5";
 
 export default {
@@ -53,20 +53,21 @@ export default {
         });
         return false;
       }
-      let params = { user, password: md5(password+config.scrent), photo };
+      let params = { user, password: md5(password + config.scrent), photo, isadmin: true};
       const result = await register(params);
-      if (result.code == 0) {
+      if (result.data.code == 0 && result.status == 200) {
         this.$message(
           {
             message: "恭喜你，注册成功",
             type: "success"
-          },
-          () => {
-            this.$router.push({
-              path: "/"
-            });
           }
         );
+        this.$router.push({ path: "/sign_in" });
+      } else {
+        this.$message({
+          message: result.data.desc,
+          type: "warning"
+        });
       }
     }
   }
