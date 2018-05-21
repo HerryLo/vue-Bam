@@ -44,3 +44,12 @@ export const login = async (params) => {
     params)
   return result
 }
+
+/**
+ * 获取用户列表
+ */
+export const userlist = async (params) => {
+  const result = await axios.get(`${config.url}/api/userlist`,
+    params)
+  return result
+}

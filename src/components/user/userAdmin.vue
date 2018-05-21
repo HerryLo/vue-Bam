@@ -51,6 +51,8 @@
 </template>
 
 <script>
+import { userlist } from "../../config/API";
+
 export default {
   data() {
     return {
@@ -71,12 +73,20 @@ export default {
           address: "上海市普陀区金沙江路 1518 弄",
           zip: 200333
         }
-      ]
+      ],
+      userList: []
     };
+  },
+  mounted() {
+    this.userlist();
   },
   methods: {
     deleteRow(index, rows) {
       rows.splice(index, 1);
+    },
+    async userlist() {
+      const result = await userlist();
+      this.userList = result;
     }
   }
 };
