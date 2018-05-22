@@ -9,10 +9,6 @@ axios.interceptors.request.use((config) => {
   if (token) {
     config.headers.setToken = token
   }
-  if (config.data.name === 'JsonWebTokenError' && !token) {
-    location.href = '#/sign_in'
-  }
-  console.log(config)
   return config
 }, function (error) {
   return Promise.reject(error)
@@ -22,6 +18,11 @@ axios.interceptors.request.use((config) => {
  * 响应拦截器
  */
 axios.interceptors.response.use((response) => {
+  const token = localStorage.getItem('LHToken')
+  if (response.data.name === 'JsonWebTokenError' && !token) {
+    location.href = '#/sign_in'
+  }
+  console.log(config)
   return response
 }, function (error) {
   return Promise.reject(error)

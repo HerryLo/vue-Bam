@@ -15,8 +15,7 @@
       active-text-color="#ffd04b">
       <el-submenu index="1">
         <template slot="title"><i class="el-icon-message">管理员</i></template>
-        <el-menu-item-group>
-          <template slot="title">管理</template>        
+        <el-menu-item-group>   
           <el-menu-item index="1-1" @click="toRouter('/userAdmin')">
             用户管理
           </el-menu-item>

@@ -2,5 +2,5 @@
 
 export default {
   url: `http://localhost:12345`,
-  scrent: 'liuheng123'
+  scrent: 'LiuHeng9227fe78182er'
 }
