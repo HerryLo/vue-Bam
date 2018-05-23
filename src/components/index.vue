@@ -67,15 +67,8 @@ export default {
       ]
     };
   },
-  created() {
-    // artListAPI("")
-    //   .then(res => {
-    //     this.artList = res.data;
-    //     console.log(this.artList.data);
-    //   })
-    //   .catch(res => {
-    //     console.log(res.data);
-    //   });
+  mounted() {
+
   },
   methods: {
     toRouter(url) {
