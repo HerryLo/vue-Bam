@@ -19,12 +19,16 @@ axios.interceptors.request.use((config) => {
  */
 axios.interceptors.response.use((response) => {
   const token = localStorage.getItem('LHToken')
-  if (response.data.name === 'JsonWebTokenError' && !token) {
+  if (response.data.error === 'JsonWebTokenError' && !token) {
     location.href = '#/sign_in'
   }
-  console.log(config)
+  // console.log(config)
   return response
 }, function (error) {
+  const response = error.response
+  if (response.data.error === 'JsonWebTokenError') {
+    location.href = '#/sign_in'
+  }
   return Promise.reject(error)
 })
 
@@ -32,8 +36,8 @@ axios.interceptors.response.use((response) => {
  * 账号注册
  */
 export const register = async (params) => {
-  const result = await axios.post(`${config.url}/user/register`,
-    params)
+  const url = `${config.url}/user/register`
+  const result = await axios.post(url, params)
   return result
 }
 
@@ -41,8 +45,8 @@ export const register = async (params) => {
  * 登录
  */
 export const login = async (params) => {
-  const result = await axios.post(`${config.url}/user/login`,
-    params)
+  const url = `${config.url}/user/login`
+  const result = await axios.post(url, params)
   return result
 }
 
@@ -50,7 +54,16 @@ export const login = async (params) => {
  * 获取用户列表
  */
 export const userlist = async (params) => {
-  const result = await axios.get(`${config.url}/api/userlist`,
-    params)
-  return result
+  const url = `${config.url}/api/userlist`
+  const result = await axios.get(url, params)
+  return result.data
+}
+
+/**
+ * 获取用户列表
+ */
+export const createarticle = async (params) => {
+  const url = `${config.url}/api/createarticle`
+  const result = await axios.post(url, params)
+  return result.data
 }

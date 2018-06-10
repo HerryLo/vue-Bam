@@ -1,37 +1,27 @@
 <template>
   <el-table
-    :data="tableData4"
+    :data="dataList"
     style="width: 100%"
     max-height="250">
     <el-table-column
       fixed
-      prop="date"
+      prop="regtime"
       label="日期"
-      width="150">
+      width="200">
     </el-table-column>
     <el-table-column
-      prop="name"
-      label="姓名"
+      prop="user"
+      label="用户名"
       width="120">
     </el-table-column>
     <el-table-column
-      prop="province"
-      label="省份"
-      width="120">
-    </el-table-column>
-    <el-table-column
-      prop="city"
-      label="市区"
-      width="120">
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址"
+      prop="isadmin"
+      label="管理员"
       width="300">
     </el-table-column>
     <el-table-column
-      prop="zip"
-      label="邮编"
+      prop="photo"
+      label="电话"
       width="120">
     </el-table-column>
     <el-table-column
@@ -52,6 +42,7 @@
 
 <script>
 import { userlist } from "../../config/API";
+import { formatTime } from "../../config/utils";
 
 export default {
   data() {
@@ -74,10 +65,14 @@ export default {
           zip: 200333
         }
       ],
-      userList: []
+      userList: [],
+      dataList:[]
     };
   },
   mounted() {
+    // this.userlist();
+  },
+  created(){
     this.userlist();
   },
   methods: {
@@ -86,7 +81,16 @@ export default {
     },
     async userlist() {
       const result = await userlist();
-      this.userList = result;
+      this.userList = result.data;
+      this.formatter(result.data)
+    },
+    async formatter(row) {
+      let data = row
+      for(let i=0;i<data.length;i++){
+        data[i].isadmin = data[i].isadmin?'是':'否';
+        data[i].regtime = formatTime(new Date(data[i].regtime));
+      }
+      this.dataList =JSON.parse(JSON.stringify(data))
     }
   }
 };
