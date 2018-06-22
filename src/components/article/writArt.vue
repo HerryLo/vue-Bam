@@ -60,8 +60,13 @@
 
 </template>
 <script>
-import Quill from "quill";
+// import Quill from "quill";
 import { createarticle } from "../../config/API";
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+ 
+import { quillEditor } from 'vue-quill-editor'
 
 export default {
   data() {
@@ -186,6 +191,9 @@ export default {
   },
   mounted() {
     console.log("this is current quill instance object", this.editor);
+  },
+  components: {
+    quillEditor
   }
 };
 </script>

@@ -4,17 +4,42 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './App'
 import router from './router'
-import ElementUI from 'element-ui'
+import {
+  Upload,
+  Input,
+  Tag,
+  Button,
+  Row,
+  Col,
+  Submenu,
+  Menu,
+  MenuItem,
+  Table,
+  TableColumn,
+  Container,
+  Header,
+  Aside,
+  Main
+} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import VueQuillEditor from 'vue-quill-editor'
 import stores from './vuex/store'
 
-import 'quill/dist/quill.core.css'
-import 'quill/dist/quill.snow.css'
-import 'quill/dist/quill.bubble.css'
+Vue.component(TableColumn.name, TableColumn)
+Vue.component(Table.name, Table)
+Vue.component(MenuItem.name, MenuItem)
+Vue.component(Menu.name, Menu)
+Vue.component(Submenu.name, Submenu)
+Vue.component(Col.name, Col)
+Vue.component(Row.name, Row)
+Vue.component(Button.name, Button)
+Vue.component(Tag.name, Tag)
+Vue.component(Input.name, Input)
+Vue.component(Upload.name, Upload)
+Vue.component(Container.name, Container)
+Vue.component(Aside.name, Aside)
+Vue.component(Header.name, Header)
+Vue.component(Main.name, Main)
 
-Vue.use(VueQuillEditor)
-Vue.use(ElementUI)
 Vue.use(Vuex)
 Vue.config.productionTip = false
 
@@ -26,5 +51,7 @@ new Vue({
   router,
   store,
   template: '<App/>',
-  components: { App }
+  components: {
+    App
+  }
 })
