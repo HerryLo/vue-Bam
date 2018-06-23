@@ -19,7 +19,8 @@ import {
   Container,
   Header,
   Aside,
-  Main
+  Main,
+  Pagination
 } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import stores from './vuex/store'
@@ -39,6 +40,7 @@ Vue.component(Container.name, Container)
 Vue.component(Aside.name, Aside)
 Vue.component(Header.name, Header)
 Vue.component(Main.name, Main)
+Vue.component(Pagination.name, Pagination)
 
 Vue.use(Vuex)
 Vue.config.productionTip = false

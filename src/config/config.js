@@ -2,5 +2,6 @@
 
 export default {
   url: process.env.NODE_ENV === 'production' ? 'http://www.didiheng.com:8888' : `http://localhost:12345`,
+  // url: 'http://www.didiheng.com:8888',
   scrent: 'LiuHeng9227fe78182er'
 }

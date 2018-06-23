@@ -1,4 +1,5 @@
 <template>
+  <div>
   <el-table
     :data="dataList"
     style="width: 100%"
@@ -30,7 +31,7 @@
       width="120">
       <template slot-scope="scope">
         <el-button
-          @click.native.prevent="deleteRow(scope.$index, tableData4)"
+          @click.native.prevent="deleteRow(scope.$index, dataList)"
           type="text"
           size="small">
           移除
@@ -38,6 +39,13 @@
       </template>
     </el-table-column>
   </el-table>
+  <el-pagination
+    style="margin-top: 20px;float:right"
+    background
+    layout="prev, pager, next"
+    :total="1000">
+  </el-pagination>
+  </div>
 </template>
 
 <script>
@@ -70,7 +78,7 @@ export default {
     };
   },
   mounted() {
-    // this.userlist();
+
   },
   created(){
     this.userlist();

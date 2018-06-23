@@ -22,6 +22,12 @@ export default new Router({
       component: resolve => {
         require(['@/components/user/userAdmin'], resolve)
       }
+    }, {
+      path: '/articleList',
+      name: 'articleList',
+      component: resolve => {
+        require(['@/components/article/articleList'], resolve)
+      }
     }]
   }, {
     path: '/sign_in',
