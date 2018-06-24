@@ -2,13 +2,14 @@
   <div>
   <el-table
     :data="dataList"
-    style="width: 100%"
-    max-height="250">
+    style="width: 100%;"
+    max-height="250"
+    cell-class-name="word-style">
     <el-table-column
       fixed
       prop="regtime"
       label="日期"
-      width="200">
+      width="150">
     </el-table-column>
     <el-table-column
       prop="user"
@@ -16,9 +17,14 @@
       width="120">
     </el-table-column>
     <el-table-column
+      prop="_id"
+      label="用户ID"
+      width="250">
+    </el-table-column>
+    <el-table-column
       prop="isadmin"
       label="管理员"
-      width="300">
+      width="120">
     </el-table-column>
     <el-table-column
       prop="photo"
@@ -55,25 +61,6 @@ import { formatTime } from "../../config/utils";
 export default {
   data() {
     return {
-      tableData4: [
-        {
-          date: "2016-05-03",
-          name: "王小虎",
-          province: "上海",
-          city: "普陀区",
-          address: "上海市普陀区金沙江路 1518 弄",
-          zip: 200333
-        },
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          province: "上海",
-          city: "普陀区",
-          address: "上海市普陀区金沙江路 1518 弄",
-          zip: 200333
-        }
-      ],
-      userList: [],
       dataList:[]
     };
   },
@@ -89,7 +76,6 @@ export default {
     },
     async userlist() {
       const result = await userlist();
-      this.userList = result.data;
       this.formatter(result.data)
     },
     async formatter(row) {
@@ -103,4 +89,13 @@ export default {
   }
 };
 </script>
+
+<style>
+  .word-style{
+    overflow:hidden;
+    text-overflow:ellipsis!important;
+    white-space:nowrap!important;
+  }
+</style>
+
 

@@ -20,7 +20,8 @@ import {
   Header,
   Aside,
   Main,
-  Pagination
+  Pagination,
+  Message
 } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import stores from './vuex/store'
@@ -41,9 +42,11 @@ Vue.component(Aside.name, Aside)
 Vue.component(Header.name, Header)
 Vue.component(Main.name, Main)
 Vue.component(Pagination.name, Pagination)
+// Vue.component(Message.name, Message)
 
 Vue.use(Vuex)
 Vue.config.productionTip = false
+Vue.prototype.$message = Message
 
 const store = new Vuex.Store(stores)
 
