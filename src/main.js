@@ -1,7 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import Vuex from 'vuex'
 import App from './App'
 import router from './router'
 import {
@@ -24,7 +23,8 @@ import {
   Message
 } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import stores from './vuex/store'
+// import Vuex from 'vuex'
+// import stores from './vuex/store'
 
 Vue.component(TableColumn.name, TableColumn)
 Vue.component(Table.name, Table)
@@ -42,19 +42,18 @@ Vue.component(Aside.name, Aside)
 Vue.component(Header.name, Header)
 Vue.component(Main.name, Main)
 Vue.component(Pagination.name, Pagination)
-// Vue.component(Message.name, Message)
 
-Vue.use(Vuex)
+// Vue.use(Vuex)
 Vue.config.productionTip = false
 Vue.prototype.$message = Message
 
-const store = new Vuex.Store(stores)
+// const store = new Vuex.Store(stores)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  store,
+  // store,
   template: '<App/>',
   components: {
     App
