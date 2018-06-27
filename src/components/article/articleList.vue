@@ -60,6 +60,8 @@
 </template>
 
 <script>
+import { articlelist } from '../../config/API'
+
 export default {
   name: "articleList",
   data() {
@@ -73,7 +75,10 @@ export default {
           imgurl: "上海市普陀区金沙江路 1518 弄",
           zip: 200333
         }
-      ]
+      ],
+      skip: 1,
+      limit: 20,
+      list: []
     };
   },
   created() {
@@ -81,6 +86,11 @@ export default {
   methods: {
     deleteRow(index, rows) {
       rows.splice(index, 1);
+    },
+    async dataList() {
+      const params = { skip: this.skip, limit: this.limit };
+      const result = await articlelist(params)
+      this.list = result.result;
     }
   }
 };

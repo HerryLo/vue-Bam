@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="asideMenu">
         <el-row style="height: 100%;">
         <el-col :span="4"  style="min-height: 100%; background-color: #324057;width:100%">
             <div style="height:200px;text-align:center;">
