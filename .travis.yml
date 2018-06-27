@@ -2,4 +2,4 @@ language: node_js
 node_js:
   - '8.11.1'
 before_install:
-  - echo oracle-java10-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections | sudo update-java-alternatives -s java-10-oracle | java -version
+  - sudo apt-get install oracle-java10-installer | echo oracle-java10-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections | sudo update-java-alternatives -s java-10-oracle | java -version
