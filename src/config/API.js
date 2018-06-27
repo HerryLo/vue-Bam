@@ -1,6 +1,5 @@
 import axios from 'axios'
 import config from './config'
-import { constants } from 'zlib';
 
 /**
  * 请求拦截器
@@ -77,4 +76,3 @@ export const articlelist = async (params) => {
   const result = await axios.post(url, params)
   return result.data
 }
-

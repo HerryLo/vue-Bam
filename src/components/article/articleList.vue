@@ -76,12 +76,14 @@ export default {
           zip: 200333
         }
       ],
-      skip: 1,
+      skip: 0,
       limit: 20,
       list: []
     };
   },
   created() {
+    this.dataList();
+
   },
   methods: {
     deleteRow(index, rows) {
