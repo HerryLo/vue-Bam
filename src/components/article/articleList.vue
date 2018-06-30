@@ -1,24 +1,24 @@
 <template>
     <div>
         <el-table
-        :data="tableData4"
+        :data="list"
         style="width: 100%"
         max-height="250">
         <el-table-column
         fixed
-        prop="date"
+        prop="createTime"
         label="创建时间"
         width="200">
         </el-table-column>
         <el-table-column
-        prop="name"
+        prop="userId"
         label="用户ID"
         width="250">
         </el-table-column>
         <el-table-column
-        prop="province"
+        prop="username"
         label="创建者名称"
-        width="100">
+        width="150">
         </el-table-column>
         <el-table-column
         prop="title"
@@ -26,8 +26,13 @@
         width="200">
         </el-table-column>
         <el-table-column
-        prop="imgurl"
+        prop="imgUrl"
         label="图片地址"
+        width="150">
+        </el-table-column>
+        <el-table-column
+        prop="oneNumber"
+        label="查看人数"
         width="150">
         </el-table-column>
         <el-table-column
@@ -36,7 +41,7 @@
         width="120">
         <template slot-scope="scope">
             <el-button
-            @click.native.prevent="deleteRow(scope.$index, tableData4)"
+            @click.native.prevent="Gorouter(scope.$index, tableData4)"
             type="text"
             size="small">
             编辑
@@ -61,6 +66,7 @@
 
 <script>
 import { articlelist } from '../../config/API'
+import { formatTime } from "../../config/utils";
 
 export default {
   name: "articleList",
@@ -86,13 +92,39 @@ export default {
 
   },
   methods: {
+    /**
+     * 文章下架
+     */
     deleteRow(index, rows) {
-      rows.splice(index, 1);
+      
     },
+    /**
+     * 编辑
+     */
+    Gorouter(index, rows) {
+
+    },
+    /**
+     * 获取文章列表
+     */
     async dataList() {
       const params = { skip: this.skip, limit: this.limit };
       const result = await articlelist(params)
-      this.list = result.result;
+      this.formatter(result.data)
+    },
+    /**
+     * 数据过滤
+     */
+    async formatter(row) {
+      let data = row
+      for(let i=0;i<data.length;i++){
+        data[i].createTime = formatTime(new Date(data[i].createTime));
+        if(typeof data[i].tags != "string" ){
+          data[i].tags = JSON.stringify(data[i].tags)
+        }
+      }
+      this.list = data
+      console.log(this.list)
     }
   }
 };

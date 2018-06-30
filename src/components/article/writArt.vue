@@ -175,12 +175,13 @@ export default {
       formdata.append('file', data.fileList[0].raw);
       formdata.append('oneNumber', 0);
       formdata.append('content', data.content);
-      formdata.append('tag',JSON.stringify(data.dynamicTags));
+      formdata.append('tag',data.dynamicTags);
       formdata.append('desc', data.desc);
       formdata.append('title', data.title);
       const result =await createarticle(formdata);
       if(result){
         console.log(result);
+        this.$router.push({ path : 'articleList'})
       }
     }
   },
