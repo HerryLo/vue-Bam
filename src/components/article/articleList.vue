@@ -1,5 +1,10 @@
 <template>
     <div>
+        <el-row type="flex" justify="end">
+          <el-col :span="3">
+            <el-button type="primary" @click="AddArt" icon="el-icon-edit">添加文章</el-button>
+          </el-col>
+        </el-row>
         <el-table
         :data="list"
         style="width: 100%"
@@ -105,6 +110,12 @@ export default {
 
     },
     /**
+     * 添加文章
+     */
+    AddArt() {
+      this.$router.push({path: 'writeArt', query: { id: 'add' }})
+    },
+    /**
      * 获取文章列表
      */
     async dataList() {
@@ -131,5 +142,8 @@ export default {
 </script>
 
 <style>
+  .el-row{
+    margin-bottom: 20px;
+  }
 </style>
 

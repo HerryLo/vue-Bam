@@ -19,7 +19,7 @@
             <el-submenu index="1">
                 <template slot="title"><i class="el-icon-message"></i>管理员</template>
                 <el-menu-item index="userAdmin">用户管理</el-menu-item>
-                <el-menu-item index="writeArt">文章编辑</el-menu-item>
+                <el-menu-item index="writeArt">添加文章</el-menu-item>
                 <el-menu-item index="articleList">文章列表</el-menu-item>
             </el-submenu>
             </el-menu>
