@@ -64,86 +64,106 @@
             style="margin-top: 20px;float:right"
             background
             layout="prev, pager, next"
-            :total="1000">
+            :total="totalPage"
+            @prev-click="prevClick"
+            @next-click="nextClick"
+            @current-change="currentChange">
         </el-pagination>
   </div>
 </template>
 
 <script>
-import { articlelist } from '../../config/API'
+import { articlelist } from "../../config/API";
 import { formatTime } from "../../config/utils";
 
 export default {
   name: "articleList",
   data() {
     return {
-      tableData4: [
-        {
-          date: "2016-05-03",
-          name: "123123123123123123",
-          province: "上海",
-          title: "普陀区awdasdasd",
-          imgurl: "上海市普陀区金沙江路 1518 弄",
-          zip: 200333
-        }
-      ],
       skip: 0,
       limit: 20,
-      list: []
+      list: [],
+      totalPage: 0
     };
   },
   created() {
     this.dataList();
-
   },
   methods: {
     /**
      * 文章下架
      */
-    deleteRow(index, rows) {
-      
-    },
+    deleteRow(index, rows) {},
     /**
      * 编辑
      */
-    Gorouter(index, rows) {
-
-    },
+    Gorouter(index, rows) {},
     /**
      * 添加文章
      */
     AddArt() {
-      this.$router.push({path: 'writeArt', query: { id: 'add' }})
+      this.$router.push({ path: "writeArt", query: { id: "add" } });
     },
     /**
      * 获取文章列表
      */
     async dataList() {
       const params = { skip: this.skip, limit: this.limit };
-      const result = await articlelist(params)
-      this.formatter(result.data)
+      const result = await articlelist(params);
+      this.formatter(result.data);
+      this.totalPage = result.totalPage;
+    },
+    /**
+     * 上一页
+     */
+    async prevClick() {
+      let skip = this.skip;
+      if(skip > 0){
+        skip--;
+        this.skip = skip
+        this.dataList();
+      }
+      return false
+    },
+    /**
+     * 下一页
+     */
+    async nextClick() {
+      let skip = this.skip;
+      if(skip > 0){
+        skip++;
+        this.skip = skip
+        this.dataList();
+      }
+      return false
+    },
+    /**
+     * 当前页改变
+     */
+    async currentChange(e) {
+
     },
     /**
      * 数据过滤
      */
     async formatter(row) {
-      let data = row
-      for(let i=0;i<data.length;i++){
+      let data = row;
+      for (let i = 0; i < data.length; i++) {
         data[i].createTime = formatTime(new Date(data[i].createTime));
-        if(typeof data[i].tags != "string" ){
-          data[i].tags = JSON.stringify(data[i].tags)
+        if (typeof data[i].tags != "string") {
+          data[i].tags = JSON.stringify(data[i].tags);
         }
       }
-      this.list = data
-      console.log(this.list)
+      this.list = data;
+      // console.log(this.list);
     }
   }
 };
 </script>
 
 <style>
-  .el-row{
-    margin-bottom: 20px;
-  }
+.el-row {
+  margin-bottom: 20px;
+}
 </style>
 
