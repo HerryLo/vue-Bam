@@ -1,6 +1,6 @@
 # bam
 
-> 使用vue + elementUI开发后台管理系统界面
+vue2.0 + elementUI 后台管理系统界面
 
 ## 说明
 
