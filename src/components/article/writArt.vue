@@ -137,7 +137,10 @@ export default {
      * 移除图片
      */
     beforeRemove(file, fileList) {
-      return this.$confirm(`确定移除 ${file.name}？`);
+      this.$message({
+        type: 'success',
+        message: `${file.name} 删除成功!`
+      });
     },
     /**
      * 文件状态改变时

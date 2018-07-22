@@ -7,8 +7,7 @@
         </el-row>
         <el-table
         :data="list"
-        style="width: 100%"
-        max-height="250">
+        style="width: 100%">
         <el-table-column
         fixed
         prop="createTime"
@@ -21,7 +20,7 @@
         width="250">
         </el-table-column>
         <el-table-column
-        prop="username"
+        prop="userName"
         label="创建者名称"
         width="150">
         </el-table-column>

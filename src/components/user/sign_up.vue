@@ -10,19 +10,12 @@
         </h4>
         <div class='js-sign-in-container'>
             <div class='sign_form'>
-                <div class="input-prepend restyle js-normal">
-                    <input placeholder="你的昵称" v-model="user" type="text" name="session[email_or_mobile_number]" id="session_email_or_mobile_number">
-                    <i class="iconfont ic-user"></i>
-                </div>
-                <div class="input-prepend restyle js-normal">
-                    <input placeholder="手机号" v-model="photo" type="number" name="session[password]" id="session_photo">
-                    <i class="iconfont ic-password"></i>
-                </div>
-                <div class="input-prepend">
-                    <input placeholder="设置密码" v-model="password" type="password"  >
-                    <i class="iconfont ic-password"></i>
-                </div>
-                <input type="submit" v-on:click="register" name="commit" value="注册" class="sign-in-button" >
+                <el-input style="width:300px;margin-bottom:10px" v-model="user" placeholder="请输入你的昵称"></el-input>
+                <el-input style="width:300px;margin-bottom:10px" v-model="photo" placeholder="请输入手机号或邮箱"></el-input>
+                <el-input style="width:300px;margin-bottom:30px" v-model="password" type="password" placeholder="请设置密码"></el-input>
+                <el-row>
+                    <el-button style="width:100%" type="primary" success @click="register">注册</el-button>
+                </el-row>
             </div>
         </div>
     </div>

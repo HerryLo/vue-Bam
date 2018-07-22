@@ -20,7 +20,8 @@ import {
   Aside,
   Main,
   Pagination,
-  Message
+  Message,
+  MessageBox
 } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // import Vuex from 'vuex'
@@ -42,10 +43,13 @@ Vue.component(Aside.name, Aside)
 Vue.component(Header.name, Header)
 Vue.component(Main.name, Main)
 Vue.component(Pagination.name, Pagination)
+Vue.component(MessageBox.name, MessageBox)
 
 // Vue.use(Vuex)
 Vue.config.productionTip = false
 Vue.prototype.$message = Message
+Vue.prototype.$msgbox = MessageBox
+Vue.prototype.$confirm = MessageBox.confirm
 
 // const store = new Vuex.Store(stores)
 

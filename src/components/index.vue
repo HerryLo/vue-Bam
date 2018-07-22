@@ -9,6 +9,7 @@
         <span>admin</span>
       </el-header>
       <el-main style="background:#eee;">
+        <!-- 右边内容 -->
         <router-view />
       </el-main>
     </el-container>
