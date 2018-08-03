@@ -2,6 +2,15 @@
 
 使用vue 2.0 + element UI 构建管理系统界面，使用[koa+MongoDB](https://github.com/HerryLo/koa-mongoDB.git)搭建后端接口
 
+## 技术栈
+  * vue-cli 脚手架直接生成
+  
+  * element-UI 作为UI框架，配合界面的搭建
+  
+  * webpack 打包压缩，babel编译Es6/7语法
+  
+  * 前后端分离，[后端项目](https://github.com/HerryLo/koa-mongoDB.git)，[前端管理系统](https://github.com/HerryLo/vue-Bam)
+
 ## 运行
 
 ``` bash
