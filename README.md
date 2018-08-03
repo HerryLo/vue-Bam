@@ -11,6 +11,14 @@
   
   * 前后端分离，[后端项目](https://github.com/HerryLo/koa-mongoDB.git)，[前端管理系统](https://github.com/HerryLo/vue-Bam)
 
+## 功能
+| 功能 |  路由地址 |
+|:------|:-------|
+|登录    | /sign_in   | 
+|用户管理 | /userAdmin |
+|文章管理 | /articleList |
+|创建文章 | /writeArt |
+
 ## 运行
 
 ``` bash
