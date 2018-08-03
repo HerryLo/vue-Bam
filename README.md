@@ -25,3 +25,5 @@ $ npm run dev
 // 生产构建
 $ npm run build
 ```
+
+同时需要启动[koa+MongoDB](https://github.com/HerryLo/koa-mongoDB.git)提供接口。
