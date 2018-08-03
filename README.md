@@ -1,6 +1,6 @@
 # Vue2.0 后台管理系统
 
-后台管理系统，使用vue 2.0 + element UI 构建管理系统界面，使用[koa+MongoDB](https://github.com/HerryLo/koa-mongoDB.git)搭建后端接口
+使用vue 2.0 + element UI 构建管理系统界面，使用[koa+MongoDB](https://github.com/HerryLo/koa-mongoDB.git)搭建后端接口
 
 ## 说明
 
