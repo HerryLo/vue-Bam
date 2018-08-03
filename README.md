@@ -16,5 +16,3 @@ $ npm run dev
 // 生产构建
 $ npm run build
 ```
-
-其中的接口需要开启 项目[koa-MongoDB](https://github.com/HerryLo/koa-mongoDB.git)
