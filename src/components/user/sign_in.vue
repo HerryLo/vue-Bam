@@ -10,8 +10,8 @@
         </h4>
         <div class='js-sign-in-container'>
             <div class='sign_form'>
-                <el-input style="width:300px;margin-bottom:10px" v-model="user" placeholder="手机号或邮箱"></el-input>
-                <el-input style="width:300px;margin-bottom:30px" v-model="password" type="password" placeholder="密码"></el-input>
+                <el-input style="width:300px;margin-bottom:10px" v-model="user" placeholder="liuheng"></el-input>
+                <el-input style="width:300px;margin-bottom:30px" v-model="password" type="password" placeholder="123456"></el-input>
                 <el-row>
                     <el-button style="width:100%" type="primary" @click="login">登录</el-button>
                 </el-row>
