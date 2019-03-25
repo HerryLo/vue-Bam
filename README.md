@@ -1,6 +1,11 @@
-# vue
+# vue-el
 
-使用vue 2.0 + element UI 构建管理系统界面，使用[koa+MongoDB](https://github.com/HerryLo/koa-mongoDB.git)搭建后端接口
+![passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
+![node](https://img.shields.io/badge/node-8.11.1-green.svg)
+
+<p align="center">
+  使用vue 2.0 + element UI 构建管理系统界面
+</p>
 
 ## 技术栈
   * vue-cli 脚手架直接生成
@@ -10,6 +15,8 @@
   * webpack 打包压缩，babel编译Es6/7语法
   
   * 前后端分离，[后端项目](https://github.com/HerryLo/koa-mongoDB.git)，[前端管理系统](https://github.com/HerryLo/vue-Bam)
+  
+[koa+MongoDB 后端接口](https://github.com/HerryLo/koa-mongoDB.git)
 
 ## 功能
 | 功能 |  路由地址 |
