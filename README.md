@@ -5,7 +5,7 @@
 ![yarn](https://img.shields.io/badge/yarn-1.12.3-green.svg)
 
 <p align="center">
-  使用vue 2.0 + element UI 构建管理系统界面
+  使用vue 2.0 + element UI 构建文章管理系统界面
 </p>
 
 ---
