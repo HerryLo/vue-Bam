@@ -2,17 +2,20 @@
 
 ![passing](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![node](https://img.shields.io/badge/node-8.11.1-green.svg)
+![yarn](https://img.shields.io/badge/yarn-1.12.3-green.svg)
 
 <p align="center">
   使用vue 2.0 + element UI 构建管理系统界面
 </p>
 
 ## 技术栈
-  * vue-cli 脚手架直接生成
+  * **vue-cli** 脚手架直接生成
   
-  * element-UI 作为UI框架，配合界面的搭建
+  * **element-UI** 作为UI框架，配合界面的搭建
   
-  * webpack 打包压缩，babel编译Es6/7语法
+  * **webpack** 打包压缩，babel编译Es6/7语法
+  
+  * yarn 包管理
   
   * 前后端分离，[后端项目](https://github.com/HerryLo/koa-mongoDB.git)，[前端管理系统](https://github.com/HerryLo/vue-Bam)
   
